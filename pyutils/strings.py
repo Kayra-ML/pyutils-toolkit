@@ -53,3 +53,8 @@ def pad_left(s: str, width: int, char: str = ' ') -> str:
 def pad_right(s: str, width: int, char: str = ' ') -> str:
     """Right-pad string to given width."""
     return s.ljust(width, char)
+
+
+def word_count(s: str) -> int:
+    """Return the number of words in a string."""
+    return len(s.split())
