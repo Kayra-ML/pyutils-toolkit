@@ -38,3 +38,17 @@ Pull requests are welcome. For major changes, please open an issue first.
 ## License
 
 MIT
+
+## More Examples
+
+```python
+from pyutils import strings, dates
+
+# Slugify a title
+slug = strings.slugify("Hello World! This is a Test")
+# -> "hello-world-this-is-a-test"
+
+# Word count
+count = strings.word_count("The quick brown fox")
+# -> 4
+```
