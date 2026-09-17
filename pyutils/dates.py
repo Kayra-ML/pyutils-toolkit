@@ -32,3 +32,9 @@ def days_between(start: datetime, end: datetime) -> int:
 def is_past(dt: datetime) -> bool:
     """Check if a datetime is in the past."""
     return dt < datetime.now(dt.tzinfo)
+
+def start_of_day(dt: Optional[datetime] = None) -> datetime:
+    """Return midnight (start) of the given date."""
+    if dt is None:
+        dt = datetime.now()
+    return dt.replace(hour=0, minute=0, second=0, microsecond=0)
