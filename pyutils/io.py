@@ -46,3 +46,9 @@ def load_config(path: str, env_prefix: Optional[str] = None) -> dict:
             if env_key in os.environ:
                 config[key] = os.environ[env_key]
     return config
+
+def ensure_dir(path: str) -> Path:
+    """Create directory (and parents) if it doesn't exist. Returns Path."""
+    p = Path(path)
+    p.mkdir(parents=True, exist_ok=True)
+    return p
