@@ -38,3 +38,11 @@ def start_of_day(dt: Optional[datetime] = None) -> datetime:
     if dt is None:
         dt = datetime.now()
     return dt.replace(hour=0, minute=0, second=0, microsecond=0)
+
+
+def end_of_day(dt=None):
+    """Return 23:59:59 (end) of the given date."""
+    from datetime import datetime
+    if dt is None:
+        dt = datetime.now()
+    return dt.replace(hour=23, minute=59, second=59, microsecond=999999)
