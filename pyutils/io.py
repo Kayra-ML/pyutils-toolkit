@@ -46,3 +46,7 @@ def load_config(path: str, env_prefix: Optional[str] = None) -> dict:
             if env_key in os.environ:
                 config[key] = os.environ[env_key]
     return config
+
+def file_exists(path: str) -> bool:
+    """Return True if path exists and is a file."""
+    return Path(path).is_file()
