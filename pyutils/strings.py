@@ -35,3 +35,11 @@ def snake_to_camel(name: str) -> str:
     """Convert snake_case to camelCase."""
     components = name.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
+
+def is_numeric(s: str) -> bool:
+    """Return True if string represents a numeric value."""
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
