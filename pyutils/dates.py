@@ -38,3 +38,27 @@ def start_of_day(dt: Optional[datetime] = None) -> datetime:
     if dt is None:
         dt = datetime.now()
     return dt.replace(hour=0, minute=0, second=0, microsecond=0)
+
+
+def format_relative(dt) -> str:
+    """Return a human-readable relative time string (e.g. '3 days ago')."""
+    from datetime import datetime
+    now = datetime.now(dt.tzinfo)
+    diff = now - dt
+    days = diff.days
+    if days == 0:
+        seconds = diff.seconds
+        if seconds < 60:
+            return "just now"
+        elif seconds < 3600:
+            return f"{seconds // 60} minutes ago"
+        else:
+            return f"{seconds // 3600} hours ago"
+    elif days == 1:
+        return "yesterday"
+    elif days < 30:
+        return f"{days} days ago"
+    elif days < 365:
+        return f"{days // 30} months ago"
+    else:
+        return f"{days // 365} years ago"
