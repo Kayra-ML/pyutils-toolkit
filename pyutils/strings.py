@@ -85,3 +85,8 @@ def safe_slugify(s: str, fallback: str = "untitled") -> str:
     """Slugify with a fallback for empty or whitespace-only strings."""
     result = slugify(s)
     return result if result else fallback
+
+
+def initials(name: str) -> str:
+    """Extract initials from a full name (e.g. 'John Doe' -> 'JD')."""
+    return ''.join(word[0].upper() for word in name.split() if word)
