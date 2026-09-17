@@ -65,3 +65,11 @@ def list_files(directory: str, extension=None) -> list:
     if extension:
         return sorted(p.glob(f"*.{extension.lstrip('.')}"))
     return sorted(f for f in p.iterdir() if f.is_file())
+
+
+def append_text(path: str, content: str, encoding: str = "utf-8") -> None:
+    """Append content to a text file, creating it if it doesn't exist."""
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "a", encoding=encoding) as f:
+        f.write(content)
