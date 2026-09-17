@@ -90,3 +90,8 @@ def safe_slugify(s: str, fallback: str = "untitled") -> str:
 def remove_html_tags(s: str) -> str:
     """Strip HTML tags from a string."""
     return re.sub(r'<[^>]+>', '', s)
+
+
+def initials(name: str) -> str:
+    """Extract initials from a full name (e.g. 'John Doe' -> 'JD')."""
+    return ''.join(word[0].upper() for word in name.split() if word)
