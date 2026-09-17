@@ -57,3 +57,11 @@ def ensure_dir(path: str):
     p = Path(path)
     p.mkdir(parents=True, exist_ok=True)
     return p
+
+
+def list_files(directory: str, extension=None) -> list:
+    """List files in a directory, optionally filtered by extension."""
+    p = Path(directory)
+    if extension:
+        return sorted(p.glob(f"*.{extension.lstrip('.')}"))
+    return sorted(f for f in p.iterdir() if f.is_file())
