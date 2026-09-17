@@ -65,3 +65,11 @@ def list_files(directory: str, extension=None) -> list:
     if extension:
         return sorted(p.glob(f"*.{extension.lstrip('.')}"))
     return sorted(f for f in p.iterdir() if f.is_file())
+
+
+def list_files(directory: str, extension=None) -> list:
+    """List files in a directory, optionally filtered by extension."""
+    p = Path(directory)
+    if extension:
+        return sorted(p.glob(f"*.{extension.lstrip('.')}"))
+    return sorted(f for f in p.iterdir() if f.is_file())
