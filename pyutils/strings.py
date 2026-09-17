@@ -35,3 +35,7 @@ def snake_to_camel(name: str) -> str:
     """Convert snake_case to camelCase."""
     components = name.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
+
+def word_count(s: str) -> int:
+    """Return the number of words in a string."""
+    return len(s.split())
