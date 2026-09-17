@@ -74,3 +74,8 @@ def pad_left(s: str, width: int, char: str = ' ') -> str:
 def pad_right(s: str, width: int, char: str = ' ') -> str:
     """Right-pad string to given width."""
     return s.ljust(width, char)
+
+
+def remove_html_tags(s: str) -> str:
+    """Strip HTML tags from a string."""
+    return re.sub(r'<[^>]+>', '', s)
