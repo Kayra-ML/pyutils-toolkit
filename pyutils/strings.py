@@ -64,3 +64,13 @@ def safe_slugify(s: str, fallback: str = "untitled") -> str:
     """Slugify with a fallback for empty or whitespace-only strings."""
     result = slugify(s)
     return result if result else fallback
+
+
+def pad_left(s: str, width: int, char: str = ' ') -> str:
+    """Left-pad string to given width."""
+    return s.rjust(width, char)
+
+
+def pad_right(s: str, width: int, char: str = ' ') -> str:
+    """Right-pad string to given width."""
+    return s.ljust(width, char)
