@@ -76,3 +76,11 @@ def is_weekend(dt=None) -> bool:
     if dt is None:
         dt = datetime.now()
     return dt.weekday() >= 5
+
+
+def is_weekend(dt=None) -> bool:
+    """Return True if the given date falls on a Saturday or Sunday."""
+    from datetime import datetime
+    if dt is None:
+        dt = datetime.now()
+    return dt.weekday() >= 5
