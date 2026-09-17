@@ -43,3 +43,13 @@ def is_numeric(s: str) -> bool:
         return True
     except ValueError:
         return False
+
+
+def pad_left(s: str, width: int, char: str = ' ') -> str:
+    """Left-pad string to given width."""
+    return s.rjust(width, char)
+
+
+def pad_right(s: str, width: int, char: str = ' ') -> str:
+    """Right-pad string to given width."""
+    return s.ljust(width, char)
