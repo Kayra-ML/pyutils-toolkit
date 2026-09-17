@@ -85,3 +85,8 @@ def safe_slugify(s: str, fallback: str = "untitled") -> str:
     """Slugify with a fallback for empty or whitespace-only strings."""
     result = slugify(s)
     return result if result else fallback
+
+
+def remove_html_tags(s: str) -> str:
+    """Strip HTML tags from a string."""
+    return re.sub(r'<[^>]+>', '', s)
