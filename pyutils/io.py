@@ -50,3 +50,10 @@ def load_config(path: str, env_prefix: Optional[str] = None) -> dict:
 def file_exists(path: str) -> bool:
     """Return True if path exists and is a file."""
     return Path(path).is_file()
+
+
+def ensure_dir(path: str):
+    """Create directory (and parents) if it doesn't exist. Returns Path."""
+    p = Path(path)
+    p.mkdir(parents=True, exist_ok=True)
+    return p
