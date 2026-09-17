@@ -46,3 +46,25 @@ def end_of_day(dt=None):
     if dt is None:
         dt = datetime.now()
     return dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+
+
+def format_relative(dt) -> str:
+    """Return a human-readable relative time string (e.g. '3 days ago')."""
+    from datetime import datetime
+    now = datetime.now(dt.tzinfo)
+    diff = now - dt
+    days = diff.days
+    if days == 0:
+        secs = diff.seconds
+        if secs < 60:
+            return "just now"
+        elif secs < 3600:
+            return f"{secs // 60} minutes ago"
+        else:
+            return f"{secs // 3600} hours ago"
+    elif days == 1:
+        return "yesterday"
+    elif days < 30:
+        return f"{days} days ago"
+    else:
+        return f"{days // 30} months ago"
