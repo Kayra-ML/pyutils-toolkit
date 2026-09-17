@@ -73,3 +73,11 @@ def append_text(path: str, content: str, encoding: str = "utf-8") -> None:
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "a", encoding=encoding) as f:
         f.write(content)
+
+
+def append_text(path: str, content: str, encoding: str = "utf-8") -> None:
+    """Append content to a text file, creating it if it doesn't exist."""
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "a", encoding=encoding) as f:
+        f.write(content)
