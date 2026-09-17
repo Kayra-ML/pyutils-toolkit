@@ -68,3 +68,11 @@ def format_relative(dt) -> str:
         return f"{days} days ago"
     else:
         return f"{days // 30} months ago"
+
+
+def is_weekend(dt=None) -> bool:
+    """Return True if the given date falls on a Saturday or Sunday."""
+    from datetime import datetime
+    if dt is None:
+        dt = datetime.now()
+    return dt.weekday() >= 5
