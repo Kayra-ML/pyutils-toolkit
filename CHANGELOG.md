@@ -20,3 +20,15 @@ All notable changes to this project will be documented here.
 
 ### Fixed
 - `strings.slugify` edge case with empty input
+
+
+## [0.1.2] - 2026-09-17
+
+### Added
+- `strings.word_count`, `pad_left`, `pad_right`, `safe_slugify`
+- `strings.remove_html_tags`, `initials`
+- `dates.end_of_day`, `format_relative`, `is_weekend`
+- `io.ensure_dir`, `list_files`, `append_text`
+
+### Fixed
+- `strings.slugify` edge case with empty input
