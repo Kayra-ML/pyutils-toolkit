@@ -58,3 +58,9 @@ def pad_right(s: str, width: int, char: str = ' ') -> str:
 def word_count(s: str) -> int:
     """Return the number of words in a string."""
     return len(s.split())
+
+
+def safe_slugify(s: str, fallback: str = "untitled") -> str:
+    """Slugify with a fallback for empty or whitespace-only strings."""
+    result = slugify(s)
+    return result if result else fallback
